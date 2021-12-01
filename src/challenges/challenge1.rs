@@ -1,6 +1,8 @@
 use std::fs::File;
 use std::io::{BufRead, BufReader};
 
+use itermore::IterMore;
+
 pub fn challenge_one_partone() -> Result<(), std::io::Error> {
     let file = File::open("assets/challenge1/input1.txt")?;
     let reader = BufReader::new(file);
@@ -22,6 +24,16 @@ pub fn challenge_one_partone() -> Result<(), std::io::Error> {
     Ok(())
 }
 
-pub fn challenge_one_parttwo() {
-    println!("Hello again")
+pub fn challenge_one_parttwo() -> Result<(), std::io::Error> {
+    let file = File::open("assets/challenge1/input1.txt")?;
+    let reader = BufReader::new(file);
+    // Reading the file line by line
+    let output = reader
+        .lines()
+        .into_iter()
+        .map(|x| x.unwrap().parse::<u32>().unwrap())
+        .collect::<Vec<u32>>();
+    let count = output.iter().windows().filter(|[a, _, _, b]| b > a).count();
+    println!("{}", count);
+    Ok(())
 }
