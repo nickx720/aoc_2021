@@ -1,7 +1,7 @@
 mod challenges;
-use challenges::challenge1::{challenge_one_partone, challenge_one_parttwo};
+use challenges::challenge2::challengetwo;
 
 fn main() {
     // challenge_one_partone();
-    challenge_one_parttwo();
+    challengetwo();
 }
