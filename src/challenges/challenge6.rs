@@ -1,11 +1,42 @@
+use std::{
+    fs::File,
+    io::{BufRead, BufReader},
+};
+
 pub fn challengesix() -> Result<(), Box<dyn std::error::Error>> {
-    println!("The output of challenge six first part is {}", 1);
+    let file = File::open("assets/challenge6/input.txt")?;
+    let reader = BufReader::new(file);
+    let input = reader
+        .lines()
+        .filter(|x| x.is_ok())
+        .map(|x| if let Ok(val) = x { val } else { unreachable!() })
+        .collect::<String>();
+    let output = part_one(input);
+    println!("The output of challenge six first part is {}", output);
     Ok(())
 }
 fn part_one(input: String) -> usize {
-    let formatted_input = format_input(input);
-    dbg!(formatted_input);
-    2
+    let mut formatted_input = format_input(input);
+    let mut index = 80;
+    loop {
+        if index == 0 {
+            break;
+        }
+        if formatted_input.iter().any(|&x| x == 0) {
+            let count = formatted_input.iter().filter(|x| **x == 0u32).count();
+            formatted_input = formatted_input
+                .iter()
+                .map(|&x| if x == 0 { 7 } else { x })
+                .collect();
+            for _ in 0..count {
+                formatted_input.push(9);
+            }
+        }
+        formatted_input = formatted_input.iter().map(|x| x - 1).collect();
+
+        index -= 1;
+    }
+    formatted_input.len()
 }
 fn format_input(input: String) -> Vec<u32> {
     input
