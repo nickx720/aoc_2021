@@ -1,5 +1,5 @@
 mod challenges;
-use challenges::challenge6::challengesix;
+use challenges::challenge7::challengeseven;
 
 fn main() {
     // challenge_one_partone();
@@ -7,5 +7,6 @@ fn main() {
     //    challengethree();
     //    challengefour();
     //    challengefive();
-    challengesix();
+    //    challengesix();
+    challengeseven();
 }
