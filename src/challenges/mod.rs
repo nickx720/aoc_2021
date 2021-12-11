@@ -1,5 +1,6 @@
 pub mod challenge1;
 pub mod challenge10;
+pub mod challenge11;
 pub mod challenge2;
 pub mod challenge3;
 pub mod challenge4;
