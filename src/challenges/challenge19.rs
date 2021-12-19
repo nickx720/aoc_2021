@@ -3,7 +3,6 @@ use std::{
     io::{BufRead, BufReader},
 };
 
-use bitvec::macros::internal::funty::IsSigned;
 use hashbrown::HashSet;
 use itertools::Itertools;
 
