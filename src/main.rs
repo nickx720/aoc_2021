@@ -1,4 +1,4 @@
-use challenges::challenge22::challengetwentytwo;
+use challenges::challenge23::challengetwentythree;
 
 mod challenges;
 
@@ -24,5 +24,6 @@ fn main() {
     //    challengenineteen();
     //    challengetwenty();
     //    challengetwentyone();
-    challengetwentytwo();
+    //    challengetwentytwo();
+    challengetwentythree();
 }
