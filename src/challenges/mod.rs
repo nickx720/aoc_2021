@@ -15,6 +15,7 @@ pub mod challenge21;
 pub mod challenge22;
 pub mod challenge23;
 pub mod challenge24;
+pub mod challenge25;
 pub mod challenge3;
 pub mod challenge4;
 pub mod challenge5;
