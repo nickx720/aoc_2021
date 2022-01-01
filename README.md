@@ -6,3 +6,4 @@
 [Challenge 4](./src/challenges/challenge4.rs)
 [Challenge 5](./src/challenges/challenge5.rs)
 [Challenge 6](./src/challenges/challenge6.rs)
+[Challenge 7](./src/challenges/challenge7.rs)
